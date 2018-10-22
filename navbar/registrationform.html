@@ -23,72 +23,72 @@
         </div>
         <div class="col-md-9">
                 <h1 style="text-align: center;background-color: blue;border-radius: 50px">Registration Details</h1>
-    <form >
+    <form action="index.php" method="post" >
          <div class="row" class="form-group">
             <div class="col-md-6"  class="form-group">
-                <input type="text" name="" class="form-control" placeholder="Enter your First Name">
+                <input type="text" name="firstname" class="form-control" placeholder="Enter your First Name">
             </div>
             <div class="col-md-6"  class="form-group">
-                <input type="text" name="" class="form-control" placeholder="Enter your Last Name">
+                <input type="text" name="lastname" class="form-control" placeholder="Enter your Last Name">
             </div>
          </div><br>
 
             <div class="row" class="form-group">
             <div class="col-md-4"  class="form-group">
-                <input type="text" name="" class="form-control" placeholder="Enter your Email">
+                <input type="text" name="email" class="form-control" placeholder="Enter your Email">
             </div>
             <div class="col-md-4"  class="form-group">
-                <input type="text" name="" class="form-control" placeholder="Enter your password">
+                <input type="text" name="password" class="form-control" placeholder="Enter your password">
             </div>
              <div class="col-md-4"  class="form-group">
-                <input type="text" name="" class="form-control" placeholder="confirm password">
+                <input type="text" name="conpassword" class="form-control" placeholder="confirm password">
             </div>
          </div><br>
 
          <div class="form-group">
-             <input type="text" name="" class="form-control" placeholder="Enter your Display Name">
+             <input type="text" name="displayname" class="form-control" placeholder="Enter your Display Name">
          </div>
          <div class="form-group">
-             <input type="text" name="" class="form-control" placeholder="Enter your Father Name (Full Name)">
+             <input type="text" name="fathersname" class="form-control" placeholder="Enter your Father Name (Full Name)">
          </div>
          <div class="row">
          <div class="form-group col-md-4" >
                    
-                   Gender:<br> <input type="radio" name="gender" value="Male">Male
-                   <input type="radio" name="gender" value="Feammle">Female
+                   Gender:<br> <input type="radio" name="gender" value="M">Male
+                   <input type="radio" name="gender" value="F">Female
          </div>
          <div class="form-group col-md-4">
-            Date of Birth :<input type="date" name="" class="form-control">
+            Date of Birth :<input type="date" name="dateofbirth" class="form-control">
          </div>
           <div class="form-group col-md-4">
-        Aadhar card Number :<input type="number" name="" placeholder="Enter 12 digit Adhar card number" class="form-control">
+        Aadhar card Number :<input type="number" name="aadharnumber" placeholder="Enter 12 digit Adhar card number" class="form-control">
      </div>
      </div>
      <div class="row">
         <h4 style="text-align: center;">  Full Address</h4>
        <div class="col-md-3">
-        <input type="text" name="" placeholder="Enter your State" class="form-control">
+        <input type="text" name="state" placeholder="Enter your State" class="form-control">
        </div>
         <div class="col-md-3">
-        <input type="text" name="" placeholder="Enter your District" class="form-control">
+        <input type="text" name="district" placeholder="Enter your District" class="form-control">
        </div>
         <div class="col-md-3">
-        <input type="text" name="" placeholder="post office" class="form-control">
+        <input type="text" name="postoffice" placeholder="post office" class="form-control">
        </div>
         <div class="col-md-3">
-        <input type="text" name="" placeholder="Village/Town/city" class="form-control">
+        <input type="text" name="village" placeholder="Village/Town/city" class="form-control">
        </div>
      </div><br>
     
      <div class="form-group row" >
         <div class="form-group col-md-3" >
-            <input type="number" name="" class="form-control" placeholder="Enter your 6 digit pincode">
+            <input type="number" name="pincode" class="form-control" placeholder="Enter your 6 digit pincode">
         </div>
         <div class="form-group col-md-9">
-        <input type="text" name="" class="form-control" placeholder="Enter House no/Street ">
+        <input type="text" name="houseno" class="form-control" placeholder="Enter House no/Street ">
      </div>
      </div><br>
-     <div class="btn btn-primary"> Register</div>
+     <button type="submit">submit</button>
     </form>
 </div>
 
