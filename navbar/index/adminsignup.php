@@ -1,7 +1,15 @@
+<style>
+td{
+	padding: 5px;
+}
+</style>
 <?php
 error_reporting(0);
+$name = $_POST["name"];
 $userid = $_POST["Username"];
-$passw =$_POST["password"] ;
+$passw =$_POST["pass"] ;
+
+
 
 $servername = "localhost";
 $username = "root";
@@ -13,18 +21,19 @@ $conn = new mysqli($servername, $username, $password, "manregaDB");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
- 
-$query = "SELECT * FROM registration WHERE email = '$userid'AND password ='$passw'";
+
+$query = "SELECT * FROM admindb WHERE email = '$userid' AND password ='$passw'";
+$query1 ="SELECT * FROM registration ";
 $data = mysqli_query($conn, $query);
 $total = mysqli_num_rows($data);
- $result = mysqli_fetch_assoc($data);
- // echo $result['sid']." ".$result['firstname']." ".$result['lastname']." ".$result['fathersname']." ".$result['dateofbirth']." ".$result['aadharnumber']." ".$result['state']." ".$result['district']." ".$result['postoffice']." ".$result['village']." ".$result['pincode']." ".$result['houseno'];
+$data1= mysqli_query($conn, $query1);
 
-if($total != 0){
-?>
-<table border="1">
-	<tr>
-		<td><b>sid</b></td>
+ if($total != 0){
+ 	?>
+
+   <table border="1">
+   	<tr>
+   		<td><b>sid</b></td>
 		<td><b>FirstName</b></td>
 		<td><b>LastName</b></td>
 		<td><b>FathersName</b></td>
@@ -35,16 +44,19 @@ if($total != 0){
 		<td><b>PostOffice</b></td>
 		<td><b>Pincode</b></td>
 		<td><b>District</b></td>
-		<td><b>State</b></td>	
+		<td><b>State</b></td>
 		<td><b>working_days</b></td>
 		<td><b>Income</b></td>
-	</tr>
+		<td><b>operation</b></td>
+   	</tr>
+   
 
- 
+ 	<?php
 
-<?php
-// echo $result['sid']." ".$result['firstname']." ".$result['lastname']." ".$result['fathersname']." ".$result['dateofbirth']." ".$result['aadharnumber']." ".$result['state']." ".$result['district']." ".$result['postoffice']." ".$result['village']." ".$result['pincode']." ".$result['houseno'];
-      echo  "<tr>
+    while ($result = mysqli_fetch_assoc($data1)) {
+    	# code...
+    
+ 	  echo  "<tr>
       <td>".$result['sid']."</td>
 		<td>".$result['firstname']."</td>
 		 <td>".$result['lastname']."</td>
@@ -59,11 +71,12 @@ if($total != 0){
 		<td>".$result['state']."</td>
 		<td>".$result['Working_days']."</td>
 		<td>".$result['Income']."</td>
+		<td><a href='update.php?sid=$result[sid] & nod=$result[Working_days] & inc=$result[Income]'>update</a></td>
+
 		</tr> " ;
-		
-	
-}
-else{
+	}
+ }
+ else{
 	echo "INVALID USERNAME OR PASSWORD";
 }
 ?>
